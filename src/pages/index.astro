@@ -2,9 +2,11 @@
 import logo from "../../public/logo/santiago.jpg";
 import Badge from "../components/Badge.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import GitLabIcon from "../components/icons/GitLab.astro";
 import LinkedinIcon from "../components/icons/Linkedin.astro";
@@ -12,31 +14,31 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portafolio de santiago - Desarrollador y Programador Web" description="portafolio de santiago desarrollador web y programador">
-	<main>
+	<main class="px-4">
 		<SectionContainer class="py-44 pb-24">
 			<img class="rounded-full size-12 mb-4" src={logo.src} alt="foto de perfil" />
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 				Hola, Soy Santiago
 				<a href="https://www.linkedin.com/in/santiago-everardo-orozco-carmona/" target="_blank" rel="noopener" class="flex justify-center items-center">
 					<Badge>Disponible Para Trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-2xl text-wrap">
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
 				Un entusiasta programador web con experiencia en proyectos que abarcan diversas tecnologías, como HTML, PHP, CSS, JavaScript, Bootstrap, MySQL, Go, Python (Django y Flask), y Laravel. En el 2023, desarrollé una aplicación PWA utilizando Angular y Laravel, donde implementé JSON Web
 				Tokens para el inicio de sesión y la seguridad de las rutas en el backend. Mi constante búsqueda de desafíos y mi compromiso con el aprendizaje continuo me impulsan a crecer como profesional en el emocionante campo del desarrollo web.
 			</h2>
 
-			<nav class="flex gap-x-4 mt-8">
+			<nav class="flex gap-4 mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/santiago-everardo-orozco-carmona/">
-					<LinkedinIcon class="size-6" />
+					<LinkedinIcon class="size-4 md:size-6" />
 					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/santiagoeor">
-					<GitHubIcon class="size-6" />
+					<GitHubIcon class="size-4 md:size-6" />
 					GitHub
 				</SocialPill>
 				<SocialPill href="https://gitlab.com/santiagoeor">
-					<GitLabIcon class="size-6" />
+					<GitLabIcon class="size-4 md:size-6" />
 					GitLab
 				</SocialPill>
 			</nav>
@@ -44,10 +46,18 @@ import Layout from "../layouts/Layout.astro";
 
 		<SectionContainer id="experience">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<Briefcase class="size-7" />
+				<BriefcaseIcon class="size-7" />
 				Experiencia laboral
 			</h2>
 			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>
