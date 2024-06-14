@@ -1,5 +1,17 @@
 ---
+import SocialPill from "./SocialPill.astro";
+import GitHubIcon from "./icons/GitHub.astro";
 import JavaScript from "./icons/JavaScript.astro";
+import Preview from "./icons/Preview.astro";
+
+interface Projects {
+    title: string;
+    description: string;
+    link?: string;
+    github: string;
+    image: string;
+    tags: any[];
+}
 
 const TAGS = {
     JAVASCRIPT: {
@@ -9,7 +21,7 @@ const TAGS = {
     },
 };
 
-const PROJECTS = [
+const PROJECTS: Projects[] = [
     {
         title: "Sistema De Ventas",
         description: "loewjs isu sjsdksddss",
@@ -22,10 +34,9 @@ const PROJECTS = [
 ---
 
 {
-    PROJECTS.map(({ title, description, tags, image }) => (
+    PROJECTS.map(({ title, description, tags, image, github, link }) => (
         <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <h3 class="text-2xl font-semibol mb-2">{title}</h3>
             <ul class="flex gap-x-2 flex-row mb-2">
                 {tags.map((tag) => (
                     <li>
@@ -36,7 +47,25 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+
+            <nav class="flex gap-4 mt-8 flex-wrap mb-2">
+                {github && (
+                    <SocialPill href={github}>
+                        <GitHubIcon class="size-4 md:size-6" />
+                        GitHub
+                    </SocialPill>
+                )}
+
+                {link && (
+                    <SocialPill href={link}>
+                        <Preview class="size-4 md:size-6" />
+                        Preview
+                    </SocialPill>
+                )}
+            </nav>
         </article>
     ))
 }
