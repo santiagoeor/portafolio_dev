@@ -1,6 +1,7 @@
 ---
 import SocialPill from "./SocialPill.astro";
 import GitHubIcon from "./icons/GitHub.astro";
+import GitLabIcon from "./icons/GitLab.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import Preview from "./icons/Preview.astro";
 
@@ -8,7 +9,8 @@ interface Projects {
     title: string;
     description: string;
     link?: string;
-    github: string;
+    github?: string;
+    gitlab?: string;
     image: string;
     tags: any[];
 }
@@ -23,18 +25,90 @@ const TAGS = {
 
 const PROJECTS: Projects[] = [
     {
-        title: "Sistema De Ventas",
-        description: "loewjs isu sjsdksddss",
-        link: "#",
-        github: "#",
-        image: "/projects/sistema_ventas.webp",
+        title: "Almacen Virtual",
+        description: `
+        Mi debut en el desarrollo web fue con un grupo de amigos, colaborando en la creación de un almacén virtual. 
+        Inicialmente construido con HTML, CSS y JavaScript, el proyecto evolucionó al cambiar la extensión de los archivos a PHP 
+        para superar desafíos de navegación entre páginas. Esta experiencia no solo representó mis primeros pasos en el desarrollo web, 
+        sino también una lección valiosa sobre adaptabilidad y resolución de problemas en el mundo digital.
+        `,
+        // link: "#",
+        github: "https://github.com/equipode/Almacen_Virtual",
+        image: "/projects/almacen_virtual.webp",
+        tags: [TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Asesorias Web",
+        description: `
+        Participé en un proyecto colaborativo junto a amigos y compañeros de estudio, dedicado a brindar asesoramiento
+         y crear sitios web personalizados. Durante esta experiencia, adquirí habilidades fundamentales, como la gestión
+          de proyectos con Git y GitHub para trabajar de manera eficiente en equipo. Exploramos conceptos de wireframing
+           y perfeccionamos la capacidad de diseñar interfaces responsivas mediante el uso de Bootstrap. Esta iniciativa
+            no solo fortaleció mis habilidades técnicas, sino que también destacó la importancia de la colaboración y la
+             planificación en el desarrollo web.
+        `,
+        // link: "#",
+        github: "https://github.com/equipode/asesorias_web",
+        image: "/projects/asesorias_web.webp",
+        tags: [TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Tu Casa Ciclista",
+        description: `
+        Junto a mis compañeros de clase, desarrollé el proyecto "Tu Casa Ciclista", una tienda en línea especializada en la venta de bicicletas.
+         La plataforma exhibe detalladamente cada bicicleta y, al iniciar sesión, los usuarios pueden explorar y gestionar productos, permitiéndoles 
+         crear, editar y eliminar artículos según sus preferencias. Este proyecto busca ofrecer una experiencia de compra completa y personalizada 
+         para los entusiastas de las bicicletas.
+        `,
+        // link: "#",
+        github: "https://github.com/equipode/Tu_casa_ciclista",
+        image: "/projects/tu_casa_ciclista.webp",
+        tags: [TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Subastas En Linea",
+        description: `
+        Este proyecto se centra en la exhibición de subastas directamente en la página principal, brindando a los usuarios la posibilidad
+         de explorar en detalle cada oferta. Al iniciar sesión, los usuarios pueden participar activamente registrando, editando y eliminando
+          subastas. La tecnología utilizada incluye Php, AdminLTE, HTML, CSS, JavaScript, JQuery, MySQL y GitLab, asegurando una plataforma robusta
+           y completa para la gestión y participación en subastas en línea.
+        `,
+        // link: "#",
+        gitlab: "https://gitlab.com/santiagoeor/subastasenlinea",
+        image: "/projects/subastas_enlinea.webp",
+        tags: [TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Backend De Pendientes",
+        description: `
+        Durante este proyecto, exploré a fondo la creación de una API en Laravel, abordando aspectos clave como migraciones para definir
+         esquemas de bases de datos y establecer relaciones entre tablas. Utilicé MySQL como base de datos y aprendí a implementar un sistema
+          de autenticación basado en JWT para la seguridad de inicio de sesión.
+        `,
+        // link: "#",
+        github: "https://github.com/santiagoeor/Api_pendientes",
+        image: "/projects/apiPendientesBackend.webp",
+        tags: [TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Frontend De Pendientes",
+        description: `
+        En este proyecto, construí el frontend para interactuar con mi API de pendientes en Laravel mediante Angular. Aplicando los conocimientos
+         adquiridos en un curso de Angular, implementé un interceptor para enviar el token obtenido durante el inicio de sesión al backend.
+          Además, establecí un guardian para proteger las rutas y, por defecto, convertí la aplicación en una PWA (Progressive Web App).
+        `,
+        // link: "#",
+        github: "https://github.com/santiagoeor/clientPendientes",
+        image: "/projects/clientPendienteFrontend.webp",
         tags: [TAGS.JAVASCRIPT],
     },
 ];
+
+PROJECTS.reverse();
 ---
 
 {
-    PROJECTS.map(({ title, description, tags, image, github, link }) => (
+    PROJECTS.map(({ title, description, tags, image, github, gitlab, link }) => (
         <article>
             <h3 class="text-2xl font-semibol mb-2">{title}</h3>
             <ul class="flex gap-x-2 flex-row mb-2">
@@ -51,11 +125,18 @@ const PROJECTS: Projects[] = [
 
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
 
-            <nav class="flex gap-4 mt-8 flex-wrap mb-2">
+            <nav class="flex gap-4 mt-8 flex-wrap mb-10">
                 {github && (
                     <SocialPill href={github}>
                         <GitHubIcon class="size-4 md:size-6" />
                         GitHub
+                    </SocialPill>
+                )}
+
+                {gitlab && (
+                    <SocialPill href={gitlab}>
+                        <GitLabIcon class="size-4 md:size-6" />
+                        GitLab
                     </SocialPill>
                 )}
 
