@@ -1,6 +1,7 @@
 ---
 import SocialPill from "./SocialPill.astro";
 import Angular from "./icons/Angular.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 import GitLabIcon from "./icons/GitLab.astro";
 import JavaScript from "./icons/JavaScript.astro";
@@ -38,6 +39,11 @@ const TAGS = {
         name: "PHP",
         class: "bg-[#323330] text-[#E8F6FF]",
         icon: Php,
+    },
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-[#E8F6FF] text-[#323330]",
+        icon: Bootstrap,
     },
 };
 
@@ -118,7 +124,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/santiagoeor/clientPendientes",
         image: "/projects/clientPendienteFrontend.webp",
-        tags: [TAGS.ANGULAR],
+        tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP],
     },
 ];
 
