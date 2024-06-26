@@ -5,6 +5,7 @@ import Bootstrap from "./icons/Bootstrap.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 import GitLabIcon from "./icons/GitLab.astro";
 import JavaScript from "./icons/JavaScript.astro";
+import JwtIcon from "./icons/Jwt.astro";
 import Laravel from "./icons/Laravel.astro";
 import Php from "./icons/Php.astro";
 import Preview from "./icons/Preview.astro";
@@ -45,6 +46,11 @@ const TAGS = {
         class: "bg-[#E8F6FF] text-[#323330]",
         icon: Bootstrap,
     },
+    JWT: {
+        name: "JWT",
+        class: "bg-[#E8F6FF] text-[#323330]",
+        icon: JwtIcon,
+    },
 };
 
 const PROJECTS: Projects[] = [
@@ -59,7 +65,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/equipode/Almacen_Virtual",
         image: "/projects/almacen_virtual.webp",
-        tags: [TAGS.PHP],
+        tags: [TAGS.PHP, TAGS.JAVASCRIPT],
     },
     {
         title: "Asesorias Web",
@@ -74,7 +80,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/equipode/asesorias_web",
         image: "/projects/asesorias_web.webp",
-        tags: [TAGS.PHP],
+        tags: [TAGS.PHP, TAGS.BOOTSTRAP],
     },
     {
         title: "Tu Casa Ciclista",
@@ -87,7 +93,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/equipode/Tu_casa_ciclista",
         image: "/projects/tu_casa_ciclista.webp",
-        tags: [TAGS.PHP, TAGS.JAVASCRIPT],
+        tags: [TAGS.PHP, TAGS.JAVASCRIPT, TAGS.BOOTSTRAP],
     },
     {
         title: "Subastas En Linea",
@@ -100,7 +106,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         gitlab: "https://gitlab.com/santiagoeor/subastasenlinea",
         image: "/projects/subastas_enlinea.webp",
-        tags: [TAGS.PHP, TAGS.JAVASCRIPT],
+        tags: [TAGS.PHP, TAGS.JAVASCRIPT, TAGS.BOOTSTRAP],
     },
     {
         title: "Backend De Pendientes",
@@ -112,7 +118,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/santiagoeor/Api_pendientes",
         image: "/projects/apiPendientesBackend.webp",
-        tags: [TAGS.LARAVEL],
+        tags: [TAGS.LARAVEL, TAGS.JWT],
     },
     {
         title: "Frontend De Pendientes",
@@ -124,7 +130,7 @@ const PROJECTS: Projects[] = [
         // link: "#",
         github: "https://github.com/santiagoeor/clientPendientes",
         image: "/projects/clientPendienteFrontend.webp",
-        tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP],
+        tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.JWT],
     },
 ];
 
